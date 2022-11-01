@@ -1,0 +1,6 @@
+/gltf_cache/
+/nohup.out
+/.classpath
+/.project
+.DS_Store
+/target/
