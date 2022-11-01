@@ -72,7 +72,7 @@ $  openssl rsa -noout -modulus -in kinetica_key.pem | openssl md5
 (stdin)= e19e78a3eb16485e8af04ba9d15bc37e
 ```
 
-Next you will need to create the p12 keystore containing the cert/key pair.
+Next you will need to create the PKCS12 keystore containing the cert/key pair.
 
 ```sh
 openssl pkcs12 -export \
@@ -92,6 +92,13 @@ server.ssl.key-store-password=kinetica
 server.ssl.key-store-type=PKCS12
 server.ssl.key-alias=kinetica
 ```
+
+See also:
+
+* [Spring Boot SSL Configuration](https://docs.spring.io/spring-cloud-skipper/docs/1.0.0.BUILD-SNAPSHOT/reference/html/configuration-security-enabling-https.html)
+* [OpenSSL PKCS12](https://www.openssl.org/docs/manmaster/man1/openssl-pkcs12.html)
+* [OpenSSL X509](https://www.openssl.org/docs/manmaster/man1/openssl-x509.html)
+* [OpenSSL Quick reference](https://www.digicert.com/kb/ssl-support/openssl-quick-reference-guide.htm)
 
 ## Administration
 
@@ -145,7 +152,7 @@ You can test the service with a web browser by copying a test URL. The response 
 
 ## Feature Table Reference
 
-The tables are kept in the Kinetica `3DBASIN` schema by default. This schema can be configured in the `application.properties` file.
+The tables are kept in the Kinetica `3DBASIN` schema by default. This schema can be configured in the `application.properties` file. Table create scripts are available under the '/ddl' directory.
 
 ### gvis_sphere_events
 
