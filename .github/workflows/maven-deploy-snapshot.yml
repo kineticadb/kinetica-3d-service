@@ -1,5 +1,5 @@
-name: Publish Snaphot to Kinetica
-run-name: Publish Snaphot to Kinetica on ${{ github.ref }}
+name: Deploy Snapshot to Kinetica
+run-name: Deploy Snapshot to Kinetica on ${{ github.ref }}
 
 on:
   workflow_dispatch:
