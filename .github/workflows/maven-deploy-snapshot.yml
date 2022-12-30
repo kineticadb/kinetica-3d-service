@@ -1,0 +1,33 @@
+name: Publish Snaphot to Kinetica
+run-name: Publish Snaphot to Kinetica on ${{ github.ref }}
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      MAVEN_CMD: mvn --batch-mode
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Maven environment
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+          server-id: 'kinetica-nexus'
+          cache: 'maven'
+  
+      - name: Verify the build configuration
+        run: ${{ env.MAVEN_CMD }} validate
+  
+      - name: Deploy to Kinetica Repository
+        run: ${{ env.MAVEN_CMD }} deploy
+        env:
+          MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}

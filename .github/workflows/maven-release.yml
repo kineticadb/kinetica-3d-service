@@ -1,0 +1,39 @@
+name: Release to Kinetica Repository
+run-name: Release to Kinetica Repository on ${{ github.ref }}
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      MAVEN_CMD: mvn --batch-mode -Prelease
+    steps:
+      - uses: actions/checkout@v3
+      - uses: fregante/setup-git-user@v1
+      
+      - name: Set up Maven environment
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+          server-id: 'kinetica-nexus'
+          cache: 'maven'
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
+          
+      - name: Validate the POM configuration
+        run: ${{ env.MAVEN_CMD }} validate
+        
+      - name: Prepare the release
+        run: ${{ env.MAVEN_CMD }} -Dresume=false release:prepare
+        
+      - name: Deploy to Maven repository
+        run: ${{ env.MAVEN_CMD }} release:perform
+        env:
+          MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
+          
+      - name: Push tag and updated pom files to project
+        run: git push --tags origin master
