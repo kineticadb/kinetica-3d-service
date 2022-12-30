@@ -7,19 +7,19 @@
     </formats>
     <fileSets>
         <fileSet>
-            <directory>${project.basedir}</directory>
+            <directory>${project.basedir}/config</directory>
             <outputDirectory>.</outputDirectory>
             <includes>
-                <include>config/application.properties</include>
-                <include>config/application-prod.properties</include>
-                <include>config/logback-spring.xml</include>
+                <include>application.properties</include>
+                <include>application-prod.properties</include>
+                <include>logback-spring.xml</include>
             </includes>
         </fileSet>
     </fileSets>
     <files>
         <file>
             <source>${project.build.directory}/${project.build.finalName}.jar</source>
-            <outputDirectory>target/</outputDirectory>
+            <outputDirectory>.</outputDirectory>
         </file>
     </files>
 </assembly>
