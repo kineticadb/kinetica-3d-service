@@ -7,7 +7,7 @@
         <version>1.3.1</version>
     </parent>
     
-    <version>1.3.2</version>
+    <version>1.3.3-SNAPSHOT</version>
     <artifactId>gltf-service</artifactId>
     <packaging>jar</packaging>
     <name>Kinetica glTF Service</name>
@@ -18,7 +18,7 @@
         <url>https://github.com/kineticadb/kinetica-3d-service.git</url>
         
         <!-- The release plugin expects the HEAD tag so leave this. -->
-        <tag>v1.3.2</tag>
+        <tag>HEAD</tag>
     </scm>
     
     <repositories>
