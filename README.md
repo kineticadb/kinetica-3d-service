@@ -1,5 +1,8 @@
 # Kinetica 3D Service
 
+[![Kinetica Nexus (Releases)](https://img.shields.io/nexus/r/com.kinetica.3d/gltf-service?server=https%3A%2F%2Fnexus.kinetica.com&style=flat)](https://nexus.kinetica.com/#browse/browse:releases:com%2Fkinetica%2F3d%2Fservice)
+[![Deploy Snapshot to Kinetica](https://github.com/kineticadb/kinetica-3d-service/actions/workflows/maven-deploy-snapshot.yml/badge.svg)](https://github.com/kineticadb/kinetica-3d-service/actions/workflows/maven-deploy-snapshot.yml)
+
 The Kinetica 3D Service is a REST service based on [Spring Boot][SPRING_BOOT] that generates 3D models in [glTF][GLTF_SPEC] format from feature data in Kinetica. The types of models supported include:
 
 * Terrain/Layers
@@ -22,9 +25,9 @@ The Kinetica 3D Service is a REST service based on [Spring Boot][SPRING_BOOT] th
     - [JUnit testing](#junit-testing)
     - [Browser based testing](#browser-based-testing)
 - [Feature Table Reference](#feature-table-reference)
-    - [gvis_sphere_events](#gvis_sphere_events)
-    - [gvis_pipe](#gvis_pipe)
-    - [gvis_terrain](#gvis_terrain)
+    - [gvis\_sphere\_events](#gvis_sphere_events)
+    - [gvis\_pipe](#gvis_pipe)
+    - [gvis\_terrain](#gvis_terrain)
 - [References](#references)
 
 ## REST API
