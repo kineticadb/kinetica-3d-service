@@ -52,6 +52,23 @@ The `getSphereEvents` API makes use of the following glTF extensions.
 
 ### Deployment
 
+The project distribution releases are available on the [Kinetica Nexus][KINETICA_NEXUS]. You can browse for the latest version number. Assuming your version is `1.3.2` you can download and extract it as shown.
+
+```sh
+$ curl -O https://nexus.kinetica.com/repository/releases/com/kinetica/3d/gltf-service/1.3.2/gltf-service-1.3.2-dist.zip
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 26.8M  100 26.8M    0     0  15.1M      0  0:00:01  0:00:01 --:--:-- 15.2M
+
+$ unzip gltf-service-1.3.2-dist.zip
+Archive:  gltf-service-1.3.2-dist.zip
+   creating: gltf-service-1.3.2/
+  inflating: gltf-service-1.3.2/application.properties
+  inflating: gltf-service-1.3.2/logback-spring.xml
+  inflating: gltf-service-1.3.2/application-prod.properties
+  inflating: gltf-service-1.3.2/gltf-service-1.3.2.jar
+```
+
 The following files should be deployed into the application directory:
 
 | File | Description |
@@ -59,13 +76,15 @@ The following files should be deployed into the application directory:
 | `/application.properties` | Base configuration for all profiles including testing. |
 | `/application-prod.properties` | Configuration for prod profile. |
 | `/logback-spring.xml` | Enable logging of specific classes. |
-| `/gltf-service-1.1.jar` | Self contained executable jar. |
+| `/gltf-service-1.3.2.jar` | Self contained executable jar. |
 
 This service is based on [Spring Boot][SPRING_BOOT]. Kinetica connection info must be made in `application.properties-prod`. You must set `spring.profiles.active=prod` so the the prod configuration will be used. You can update the default port which is set to `8120`.
 
 ### SSL Setup
 
 To configure inbound SSL you will first need to obtain a key/certificate pair. Assuming that you have your PEM formatted certificate as `kinetica.pem` and key as `kinetica_key.pem` you can verify that their public keys match.
+
+[KINETICA_NEXUS]: <https://nexus.kinetica.com/#browse/browse:releases:com%2Fkinetica%2F3d%2Fgltf-service>
 
 ```sh
 $ openssl x509 -noout -modulus -in kinetica.pem | openssl md5
