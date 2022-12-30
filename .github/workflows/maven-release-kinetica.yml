@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   
 jobs:
-  publish:
+  release:
     runs-on: ubuntu-latest
     env:
       MAVEN_CMD: mvn --batch-mode -Prelease
