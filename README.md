@@ -1,6 +1,7 @@
 # Kinetica 3D Service
 
 [![Kinetica Nexus (Releases)](https://img.shields.io/nexus/r/com.kinetica.3d/gltf-service?label=Kinetica%20Nexus&server=https%3A%2F%2Fnexus.kinetica.com&style=flat)](https://nexus.kinetica.com/#browse/browse:releases:com%2Fkinetica%2F3d%2Fgltf-service)
+[![Kinetica Nexus (Snapshots)](https://img.shields.io/badge/dynamic/xml?color=orange&label=Kinetica%20Nexus&query=%2F%2Fmetadata%2Fversioning%2Fversions%2Fversion%5Blast()%5D&url=https%3A%2F%2Fnexus.kinetica.com%2Frepository%2Fsnapshots%2Fcom%2Fkinetica%2F3d%2Fgltf-service%2Fmaven-metadata.xml&style=flat)](https://nexus.kinetica.com/#browse/browse:snapshots:com%2Fkinetica%2F3d%2Fgltf-service)
 [![Deploy Snapshot to Kinetica](https://github.com/kineticadb/kinetica-3d-service/actions/workflows/maven-deploy-snapshot.yml/badge.svg)](https://github.com/kineticadb/kinetica-3d-service/actions/workflows/maven-deploy-snapshot.yml)
 
 The Kinetica 3D Service is a REST service based on [Spring Boot][SPRING_BOOT] that generates 3D models in [glTF][GLTF_SPEC] format from feature data in Kinetica. The types of models supported include:
