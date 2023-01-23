@@ -54,8 +54,8 @@ public class GservConfiguration {
     }
     
     public void setDisableCache(boolean _val) {
-        this._config.setAllCacheEnabled(false);
-        this._config._tileCacheEnabled = !_val;
+        this._config.setAllCacheEnabled(!_val);
+        this._config._projectionCacheEnabled = !_val;
     }
     
     public void setSchema(String _val) {
